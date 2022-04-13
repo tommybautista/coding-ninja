@@ -1,0 +1,39 @@
+* {
+    /* border: 2px dotted red; */
+    margin: 0p;
+    padding: 0px;
+}
+
+.row {
+    display: flex;
+    color: white;
+    height: 60px;
+}
+
+.col {
+    flex: 1;
+    border: 1px solid black;
+    background-color: seagreen;
+    margin: 10px;
+    justify-content:space-around;
+    padding: 10px;
+    
+}
+
+.col-2 {
+    flex: 2;
+    border: 1px solid black;
+    background-color: seagreen;
+    margin: 10px;
+    justify-content:space-around;
+    padding: 10px;
+}
+
+.col-3 {
+    flex: 3;
+    border: 1px solid black;
+    background-color: seagreen;
+    margin: 10px;
+    justify-content:space-around;
+    padding: 10px;
+}

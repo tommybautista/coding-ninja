@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes Part II</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row-1">
+            <h1>Network</h1>
+        </div>
+        <div class="row-2">
+            <h2>Your Feed</h2>
+        </div>
+        <div class="row-3">
+            <div class="left">
+                <div class="left-top">
+                    <div><img src="assets/profile.jpg" alt="avatar"></div>
+                    <div><a href="">Add an avatar </a></div>
+                    <h2>James Doe</h2>
+                </div>
+                <div class="left-bottom"></div>
+            </div>
+            <div class="right"> 
+                <div class="right-top">
+                    <div>
+                        <ul class="neilfirst">
+                            <li class="neil">Niel M</li>
+                            <li class="nine"><span id="nine">9</span> like(s)</li>
+                            <li><button id="one" onclick="increaseOne('#nine')" onmouseover="changeColorOne(this)" onmouseout="changeBackOne(this)">Like</button></li>
+                        </ul>
+                        <div><p>I just set up this new discord bot, let me know what you all think. <a href="">link</a></p></div>
+                    </div>
+                </div>
+                <div class="right-middle">
+                    <div>
+                        <ul>
+                            <li class="nichole">Nichole K</li>
+                            <li class="twelve"><span id="twelve">12</span> like(s)</li>
+                            <li><button id="two" onclick="increaseTwo('#twelve')" onmouseover="changeColorTwo(this)" onmouseout="changeBackTwo(this)">Like</button></li>
+                        </ul>
+                        <div><p>Just finished my <a href="">next comic,</a> check it out.</p></div>
+                    </div>
+                </div>
+                <div class="right-bottom">
+                    <div>
+                        <ul>
+                            <li class="jim">Jim R</li>
+                            <li class="nine-two"><span id="ninetwo">9</span> like(s)</li>
+                            <li><button id="three" onclick="increaseThree('#ninetwo')" onmouseover="changeColorThree(this)" onmouseout="changeBackThree(this)">Like</button></li>
+                        </ul>
+                        <div><p>I can't stop listening to the <a href="">new album.</a>  Who else is liking it?</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

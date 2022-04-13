@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <img src="assets/Picture1.png" alt="envelope" onclick="alert('Hello Coder!')" onmouseover="img(this)" onmouseout="img2(this)">
+            <!-- <img src="assets/Picture2.png" alt="open" class="open"> -->
+        </div>
+        <div class="middle">
+            <div class="one"> </div>
+            <div class="two">
+                <p>Likes: <span id="counter1">0</span></p>
+            </div>
+            <div class="three">
+                <p>Likes: <span id="counter2">0</span></p>
+            </div>
+            <div class="four"></div>
+            <!-- <div id="four">4</div> -->
+        </div>
+        <div class="bottom">
+            <div class="outer">
+                <button class="btn1" onclick="changeColor('.one')">Button</button>
+                <button class="btn2" onclick="increase1('#counter1')"> Button </button>
+                <button class="btn3" onclick="increase2('#counter2')"> Button </button>
+                <button class="btn4" onclick="hide('.four')"> Button </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

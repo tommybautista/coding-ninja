@@ -1,0 +1,270 @@
+* {
+    /* border: 2px dotted red; */
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 1050px;
+    height: 720px;
+    margin: 20px auto;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    font-family: Comic Sans MS;
+}
+.navigation {
+    width: inherit;
+    height: 50px;
+    background-color: black;
+    color: black;
+    display: flex;
+    align-items: center;
+    
+}
+h1 {
+    margin-left: 125px;
+    color: white;
+}
+ul {
+    width: 300px;
+    justify-content: space-around;
+    display: flex;
+    margin-left: 10px;
+    /* align-items: center;
+    justify-content: space-around; */
+}
+.link {
+	text-decoration: none;
+	color: white;
+}
+button {
+    width: 100px;
+    margin-left: 300px;
+    background-color: #5dacbd;
+    color: white;
+}
+.boxes  {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    /* margin: 2px; */
+}
+.user-top {
+    width: 525px;
+    height: 100px;
+    background-color: #5dacbd;
+    border: 2px solid #5dacbd;
+    margin: 25px 12.5px 0px 25px;
+}
+.usercard {
+    width: 500px;
+    height: 350px;
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    border-left: 2px solid lightgray;
+    margin: 0px 12.5px 25px 25px;
+    padding-left: 25px;
+}
+.jane {
+    border: 3px solid black;
+    border-radius: 75px;
+    height: 95px;
+    margin-top: -50px;
+}
+h2 {
+    margin-left: 10px;
+}
+.geos {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.infos {
+	margin-top: 5px;
+	margin-left: 0px;
+}
+.settings {
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+        margin-left: 10px;
+}
+.map-marker, .gear {
+    height: 25px;
+}
+.edit {
+	margin-left: 15px;
+	color: #5dacbd;
+    cursor: pointer;
+    text-decoration: underline;
+
+}
+.edtop {
+    width: 500px;
+    height: 35px;
+    margin: 25px 12.5px 0px 25px;
+    color: white;
+    background-color: dimgray;
+    border: 2px solid dimgray;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+.education {
+    width: 500px;
+    height: 80px;
+    margin: 0px 12.5px 5px 25px;
+    padding-left: 25px;
+    padding-top: 10px;
+    /* background-color: aquamarine; */
+    border-left: 2px solid lightgray;
+    border-right: 2px solid lightgray
+    
+}
+.req-top {
+    width: 250px;
+    height: 45px;
+    color: white;
+    background-color: dimgray;
+    border: 2px solid dimgray;
+    margin: 25px 25px 0px 12.5px;
+    display: flex;
+    align-items: center;
+}
+.req-amt {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 75px;
+    margin-left: 10px;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    color: black;
+    justify-content: center;
+}
+.requests {
+    width: 240px;
+    height: 130px;
+    margin: 0px 25px 25px 12.5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    /* background-color: darkkhaki; */
+    border-right: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    border-left: 2px solid lightgray;
+}
+.todd {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.phil {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.accept1 {
+	margin-left: 40px;
+}
+.accept2 {
+	margin-left: 52px;
+}
+#img-req {
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 75px;
+}
+#img-req1 {
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 75px;
+    margin: 5px;
+}
+.con-top {
+    width: 250px;
+    height: 45px;
+    color: white;
+    background-color: dimgray;
+    border: 2px solid dimgray;
+    margin: 25px 25px 0px 12.5px;
+    display: flex;
+    align-items: center;
+}
+.con-amt {
+    width: 45px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: lightgray;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.connections {
+    width: 240px;
+    height: 290px;
+    margin: 0px 25px 0px 12.5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    /* background-color: lightcyan; */
+    border-right: 2px solid lightgray;
+    /* border-bottom: 2px solid lightgray; */
+    border-left: 2px solid lightgray;   
+}
+h3 {
+    margin-left: 5px;
+}
+.adrien {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.anne {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.alayne {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.arry {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+.con-bottom {
+    width: 240px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* background-color: dimgray; */
+    border: 2px solid lightgray;
+    margin: 0px 25px 0px 12.5px;
+}
+.view {
+	color: #5dacbd;
+}
+#img-con {
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 75px;
+}
+.footer {
+    width: 1050px;
+    height: 25px;
+    background-color: gray;
+    border-top: 2px solid black;
+    margin: 3px auto;
+}
+p {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 2px;
+}

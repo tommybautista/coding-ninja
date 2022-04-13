@@ -1,0 +1,42 @@
+* {
+    /* border: 2px dotted red; */
+    margin: 0p;
+    padding: 0px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    background-color: rgb(59, 58, 58);
+    font-family: Roboto;
+}
+h1 {
+    margin: 20px;
+    color: white;
+    font-weight: lighter;
+    font-size: 30px;
+}
+ul{
+    text-decoration: none;
+    color: rgb(59, 58, 58);
+    display: flex;
+    justify-content: space-evenly;
+    width: 375px;
+    margin-left: 70%;
+    font-size: small;    
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: darkcyan;
+    box-shadow: 3px 3px 3px black;
+    width: 75px;
+    color: white;
+    height: 25px;
+}

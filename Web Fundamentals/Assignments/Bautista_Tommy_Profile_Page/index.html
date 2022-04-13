@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div><h1>Profile</h1></div>
+            <div>
+                <ul>
+                    <li><a href="" class="link">Home</a></li>
+                    <li><a href="" class="link">My Profile</a></li>
+                    <li><a href="" class="link">Find Connections</a></li>
+                </ul>
+            </div>
+            <div><button>Sign Out</button></div>
+        </div>
+        <div class="boxes">
+            <div class="left-box">
+                <div class="user-top"></div>
+                <div class="usercard">
+                    <img src="images/jane-m.jpg" alt="Jane" class="jane">
+                    <h2 id="jane"> Jane M.</h2>
+                    <div class="geos">
+                        <img src="icons/map-marker.png" alt="map-marker" class="map-marker">
+                        <p>Seattle</p>
+                    </div>
+                    <div class="infos">
+                        <p>Developer | Engineer | Problem Solver</p>
+                        <p>Master of Shadows and the Internet!</p>
+                    </div>
+                    <div class="settings">
+                        <img src="icons/gear.png" alt="gear" class="gear">
+                        <p class="edit" onclick="changeName('#jane')">edit profile</p>
+                    </div>
+                </div> 
+                <div class="edtop">
+                    <h3>Education</h3>
+                </div>
+                <div class="education">
+                    <div><h2>Coding Dojo - Full Stack Bootcamp</h2></div>
+                    <div><p>Feb 2022 - Oct 2022</p></div>
+                    <div><p>Triple black belt in Python, MERN, and C#...</p></div>
+                </div>
+            </div>
+            <div class="right-box">
+                <div class="req-top">
+                    <div class="req-amt">2</div>
+                    <div><h3>Connection Requests</h3></div>
+                </div>
+                <div class="requests">
+                    <div class="todd">
+                        <img src="images/todd-s.jpg" alt="todd" id="img-req">
+                        <p> Todd S </p>
+                        <div class="accept1">
+                            <img src="icons/accept-circle.png" alt="accept" id="img-req1" onclick="removeUser('.todd'), increaseConnections('.con-amt'), decreaseConnections('.req-amt')"> 
+                            <img src="icons/close-circle.png" alt="close" id="img-req1" onclick="removeUser('.todd'), decreaseConnections('.req-amt')">
+                        </div>
+                    </div>
+                    <div class="phil">
+                        <img src="images/phil-s.jpg" id="img-req">
+                        <p> Phil K </p>
+                        <div class="accept2">
+                            <img src="icons/accept-circle.png" alt="accept" id="img-req1" onclick="removeUser('.phil'), increaseConnections('.con-amt'), decreaseConnections('.req-amt')"> 
+                            <img src="icons/close-circle.png" alt="close" id="img-req1" onclick="removeUser('.phil'), decreaseConnections('.req-amt')">
+                        </div>
+                    </div>
+                </div>
+                <div class="con-top">
+                    <div class="con-amt">500</div>
+                    <div><h3>Your Connections</h3></div>
+                </div>
+                <div class="connections">
+                    <div class="adrien">
+                        <img src="images/adrien-s.jpg" alt="adrien" id="img-con">
+                        <p> Adrien D </p>
+                    </div>
+                    <div class="anne">
+                        <img src="images/anne-s.jpg" alt="anne" id="img-con">
+                        <p> Anne J </p>
+                    </div>
+                    <div class="alayne">
+                        <img src="images/alayne-s.jpg" alt="alayne" id="img-con">
+                        <p> Alayne T </p>
+                    </div>
+                    <div class="arry">
+                        <img src="images/arry-s.jpg" alt="arry" id="img-con">
+                        <p> Arry Y </p>
+                    </div>
+                </div>
+                <div class="con-bottom">
+                    <a href="" class="view">View More</a>
+                </div>
+            </div>
+        </div>
+    <div class="footer"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

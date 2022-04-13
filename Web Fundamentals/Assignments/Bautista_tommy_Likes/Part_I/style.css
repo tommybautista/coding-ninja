@@ -1,0 +1,42 @@
+* {
+    /* border: 1px dotted red; */
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 500px;
+    height: 200px;
+    margin: 20px auto;
+    border: 2px solid black;
+    font-family: arial;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    height: 90px;
+    font-size: 25px;
+}
+
+#one {
+    flex: 2;
+    margin: 0px 10px;
+    
+}
+#two {
+    flex: 1;
+    margin: 0px 10px;
+}
+button {
+    flex: 1;
+    font-size: 20px;
+    height: 25px;
+    box-shadow: 4px 4px black;
+    margin: 0px 10px;
+    background-color: goldenrod;
+}
+.bottom {
+    font-size: 20px;
+    margin: 0px 10px;
+}
