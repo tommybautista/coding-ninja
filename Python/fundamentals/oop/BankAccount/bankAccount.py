@@ -18,7 +18,7 @@ class BankAccount:
         return self
 
     def yield_interest(self, int_rate):
-        self.balance -= (self.balance * int_rate)
+        self.balance += (self.balance * int_rate)
         return self
         
     def display_account_info_2(self):
