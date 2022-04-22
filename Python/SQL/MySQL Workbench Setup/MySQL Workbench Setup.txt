@@ -1,0 +1,9 @@
+SELECT * 
+FROM users;
+
+INSERT INTO tweets(tweet, user_id) 
+VALUES('I love programming', '3');
+
+UPDATE tweets SET tweet = 'this is hard' WHERE id = 234
+
+DELETE FROM tweets WHERE id = 234
