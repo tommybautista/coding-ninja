@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `frienships-queries`.`users` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `created_at` DATETIME NULL DEFAULT NOW(),
-  `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW()',
+  `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW(),
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -32,19 +32,19 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `frienships-queries`.`friendships` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `created_at` DATETIME NULL DEFAULT NOW(),
-  `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW(),
   `user_id` INT NOT NULL,
   `friend_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_friendships_users_idx` (`user_id` ASC) VISIBLE,
-  INDEX `fk_friendships_users1_idx` (`friend_id` ASC) VISIBLE,
-  CONSTRAINT `fk_friendships_users`
+  `created_at` DATETIME NULL DEFAULT NOW(),
+  `updated_at` DATETIME NULL DEFAULT NOW() ON UPDATE NOW(),
+  PRIMARY KEY (`id`, `user_id`, `friend_id`),
+  INDEX `fk_users_has_users_users1_idx` (`friend_id` ASC) VISIBLE,
+  INDEX `fk_users_has_users_users_idx` (`user_id` ASC) VISIBLE,
+  CONSTRAINT `fk_users_has_users_users`
     FOREIGN KEY (`user_id`)
     REFERENCES `frienships-queries`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_friendships_users1`
+  CONSTRAINT `fk_users_has_users_users1`
     FOREIGN KEY (`friend_id`)
     REFERENCES `frienships-queries`.`users` (`id`)
     ON DELETE NO ACTION
