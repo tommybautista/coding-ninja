@@ -18,7 +18,5 @@ def say(name):
 def repeat(num,word):
     return word * num
 
-
-
 if __name__=="__main__":
     app.run(debug=True)
