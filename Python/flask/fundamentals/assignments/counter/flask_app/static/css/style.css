@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px red dotted; */
+}
+
+.container {
+    width: 1170px;
+    margin: 0px auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1, h2, p {
+    margin: 25px;
+}
+
+a {
+    width: 175px;
+    margin: 20px;
+}
+
+input {
+    width: 50px;
+}

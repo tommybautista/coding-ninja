@@ -22,4 +22,4 @@ def color2(x,y,color1,color2):
     return render_template('index.html', rows=x, cols=y, color1=color1, color2=color2) 
 
 if __name__=="__main__":
-    app.run(debug=True)  
+    app.run(debug=True)
