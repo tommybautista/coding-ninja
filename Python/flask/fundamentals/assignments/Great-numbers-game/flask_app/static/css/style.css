@@ -10,3 +10,30 @@
     text-align: center;
     box-sizing: border-box;
 }
+
+input {
+    width: 250px;
+    height: 50px;
+    /* text-align: center;
+    font-size: 40px; */
+}
+
+span {
+    font-size: 40px;
+}
+
+button {
+    width: 100px;
+    border-radius: 10px;
+}
+
+input:placeholder-shown {
+    font-size: .7em;
+}
+
+.results {
+    width: 400px;
+    height: 200px;
+    margin: 25px auto;
+    text-align: center;
+}

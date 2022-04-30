@@ -17,14 +17,17 @@
             <h3 class="m-3 display-6 text-secondary">I am thinking of a number<br> between <span class="text-danger"> 1 </span> and <span class="text-danger"> 100 </span></h3>
             <h3 class="display-6 text-secondary">Take a guess!</h3>
         </div>
-        <div class="m-5 .col-sm-4 text-center">
-            <form action='/guess' method='POST'>
-                <input type="number" name="guess" placeholder="Enter your number here, then press 'ENTER" class="text-center text-secondary display-6"><span class="text-danger"></span></input>
-            </form>
+        <div class="results bg-success d-flex align-items-center justify-content-center"">
+            <h3 class="display-1">Correct</h3>
         </div>
         <div class="text-secondary .col-sm-4 text-center">
+            <a href="/clear" class="btn btn-warning">Play Again</a>
+        </div>
+        <div class="text-secondary .col-sm-4 text-center m-3">
             <h3>Attempts: {{session['count']}} </h3>
         </div>
+        
+
     </div>
     
 </body>
