@@ -41,5 +41,5 @@ def leadersboard():
 
 @app.route('/clear')                           
 def clear():
-    session.pop('count')
+    session.clear()
     return redirect('/')
