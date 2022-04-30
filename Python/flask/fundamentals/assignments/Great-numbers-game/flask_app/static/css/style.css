@@ -37,3 +37,19 @@ input:placeholder-shown {
     margin: 25px auto;
     text-align: center;
 }
+
+th, td {
+    width: 200px;
+    border: 1px solid black;
+    text-align: center;
+    
+}
+
+table {
+    margin: 0 auto;
+}
+
+th {
+    background-color: grey;
+    color: white;
+}

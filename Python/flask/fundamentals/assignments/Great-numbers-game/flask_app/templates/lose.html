@@ -13,23 +13,18 @@
         <div class="bg-black .col-sm-4 text-center">
             <h1 class="m-5 display-1 text-primary">Welcome to the Great Number Game!</h1>
         </div>
-
-        <div class="results bg-success d-flex align-items-center justify-content-center"">
-            <h3 class="display-4">Congrats, you got it right!</h3>
+        <div class=".col-sm-4 text-center">
+            <h3 class="m-3 display-6 text-secondary">I am thinking of a number<br> between <span class="text-danger"> 1 </span> and <span class="text-danger"> 100 </span></h3>
+            <h3 class="display-6 text-secondary">Take a guess!</h3>
         </div>
-
-        <div class="text-secondary .col-sm-4 text-center m-4">
+        <div class="results bg-warning d-flex align-items-center justify-content-center"">
+            <h3 class="display-1">You Lose!</h3>
+        </div>
+        <div class="text-secondary .col-sm-4 text-center">
             <a href="/clear" class="btn btn-warning">Play Again</a>
         </div>
         <div class="text-secondary .col-sm-4 text-center m">
             <h3>Attempts: {{session['count']}} </h3>
-        </div>
-        <div class="class text-center m-5">
-            <form action="submit" method='POST'>
-                <h6 style="font-size: 1em;"">Place your Name on the Leadersboard:</h6>
-                <input type="text" name="name" id="name" class="text-center" placeholder="Enter name, then press 'Enter'">
-            </form>
-
         </div>
         
 

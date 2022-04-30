@@ -8,29 +8,38 @@ def index():
     print(session['random_number'])
     if 'count' not in session:
         session['count'] = 0
-    else:
-        session['count'] += 1
+    # else:
+    #     session['count'] += 1
     return render_template("index.html")
 
 @app.route('/guess', methods=['POST'])                           
 def guess():
+    session['count'] += 1
     session['guess'] = request.form['guess']
     return redirect('/results')    
 
-
-
 @app.route('/results')                           
 def result():
-    session['count'] += 1
-    if int(session['guess']) < int(session['random_number']):
+    if session['count'] >= int(5):
+        return render_template("lose.html")
+    elif int(session['guess']) < int(session['random_number']):
         return render_template("too_low.html")
     elif int(session['guess']) > int(session['random_number']):
         return render_template("too_high.html")
     else: 
         return render_template("correct.html")
 
+@app.route('/submit', methods=['POST'])                           
+def submit():
+    session['name'] = request.form['name']
+    return redirect('/leadersboard') 
+
+@app.route('/leadersboard')                    
+def leadersboard():
+    return render_template("leadersboard.html")  
+
 
 @app.route('/clear')                           
 def clear():
-    session.clear()
+    session.pop('count')
     return redirect('/')
