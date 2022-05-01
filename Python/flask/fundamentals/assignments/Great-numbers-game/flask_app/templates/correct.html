@@ -25,15 +25,12 @@
             <h3>Attempts: {{session['count']}} </h3>
         </div>
         <div class="class text-center m-5">
-            <form action="submit" method='POST'>
+            <form action='/submit' method='POST'>
                 <h6 style="font-size: 1em;"">Place your Name on the Leadersboard:</h6>
-                <input type="text" name="name" id="name" class="text-center" placeholder="Enter name, then press 'Enter'">
+                <input type="text" name="name" id="name" class="text-center" placeholder="Enter name">
+                <p class="m-3"><button class="btn-secondary">Submit</button></p> 
             </form>
-
         </div>
-        
-
     </div>
-    
 </body>
 </html>

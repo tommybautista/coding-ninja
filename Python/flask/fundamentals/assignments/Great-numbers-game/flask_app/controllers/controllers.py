@@ -1,3 +1,4 @@
+from datetime import date, datetime 
 import random
 from flask import redirect, render_template, request, session
 from flask_app import app
@@ -32,12 +33,12 @@ def result():
 @app.route('/submit', methods=['POST'])                           
 def submit():
     session['name'] = request.form['name']
+    session['date'] = date.today()
     return redirect('/leadersboard') 
 
 @app.route('/leadersboard')                    
 def leadersboard():
     return render_template("leadersboard.html")  
-
 
 @app.route('/clear')                           
 def clear():
