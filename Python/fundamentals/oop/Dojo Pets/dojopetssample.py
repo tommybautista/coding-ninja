@@ -71,4 +71,4 @@ nibbles = Pet("Mr. Nibbles","Horse",['nibbles on things','is invisible'],"Hey He
 adrien = Ninja("Adrien","Dion",my_treats,my_pet_food, nibbles)
 
 adrien.feed();
-adrien.feed();
+adrien.play();
