@@ -9,18 +9,29 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container-fluid bg-secondary container">
+    <div class="container-fluid container2">
         <div>
-            <h1>Submitted Info</h1>
+            <h1 class="display-3 text-center m-3">Submitted Info</h1>
         </div>
-        <div>
-            <h4>{{ session['name'] }}</h4>
-            <h4>{{ session['location'] }}</h4>
-            <h4>{{ session['language'] }}</h4>
-            <h4>{{ session['comments'] }}</h4>
+        <div class="info">
+            <div class="info1 m-2">
+                <p>Name:</p>
+                <p>Location:</p>
+                <p>Language:</p>
+                <p>Comments:</p>
+            </div>
+            <div class="info2 m-2">
+                <p>{{ session['user_name'] }}</p>
+                <p>{{ session['user_location'] }}</p>
+                <p>{{ session['user_language'] }}</p>
+                <p>{{ session['user_comments'] }}</p>
+            </div>
+        </div> 
+        <div class="text-center m-3">
+            <form action="/">
+                <button type="submit" class="btn2 btn-warning mb-3">Return to the Survey!</button>
+            </form>
         </div>
-
-
     </div>
 </body>
 </html>

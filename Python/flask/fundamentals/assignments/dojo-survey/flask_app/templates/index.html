@@ -10,10 +10,10 @@
 </head>
 <body>
     <div class="container-fluid bg-secondary container">
-        <div class=".col-sm-4 text-left">
-            <h1 class="display-4">Dojo Survey</h1>
+        <div class="text-left text-light">
+            <h1 class="display-5">Dojo Survey</h1>
         </div>
-        <div class="bg-black .col-sm-4 text-left">
+        <div class="bg-black text-left">
             <form action='/submit' method='POST'>
                 <h4><label for="name">Name:</label></h4>
                 <h4><input type="text" name="name"></h4>
@@ -27,7 +27,7 @@
                     </select>
                 </h4>
                 <h4><label for="language">Favorite Language:</label></h4>
-                <h4>
+                <h4>                        
                     <select name="language" id="language">
                         <option value="Python">Python</option>
                         <option value="MERN">MERN</option>
@@ -35,13 +35,11 @@
                         <option value="C++">C++</option>
                         <option value="PHP">PHP</option>
                     </select>
-                </h4>
+                </h4>                    
                 <h4><label for="comments">Comments</label></h4>
                 <h5><textarea name="comments" id="comments" cols="50" rows="10"></textarea></h5>
-                <h4><a href='/submit' class="btn btn-warning m-2">Submit</a></h4>
+                <h5><button class="btn-warning mb-2">Submit</button></h5>
             </form>
         </div>
-    </div>
-    
 </body>
 </html>

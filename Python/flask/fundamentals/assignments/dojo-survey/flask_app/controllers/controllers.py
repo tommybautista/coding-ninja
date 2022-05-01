@@ -7,10 +7,10 @@ def index():
 
 @app.route('/submit', methods=['POST'])                           
 def submit():
-    session['name'] = request.form['name']
-    session['location'] = request.form['location']
-    session['language'] = request.form['language']
-    session['comments'] = request.form['comments']
+    session['user_name'] = request.form['name']
+    session['user_location'] = request.form['location']
+    session['user_language'] = request.form['language']
+    session['user_comments'] = request.form['comments']
     return redirect('/process')
 
 @app.route('/process')                           
