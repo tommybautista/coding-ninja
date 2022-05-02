@@ -11,3 +11,5 @@ def index():
     users = User.get_all()
     print(users)
     return render_template("index.html")
+
+    a
