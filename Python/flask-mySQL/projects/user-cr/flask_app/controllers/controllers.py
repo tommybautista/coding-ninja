@@ -1,9 +1,7 @@
 from flask import redirect, render_template, request, session
 from flask_app import app
+from users import User
 
-@app.route('/')                           
-def index():
-    return render_template("index.html")
 
 @app.route('/')
 def index():
@@ -11,5 +9,3 @@ def index():
     users = User.get_all()
     print(users)
     return render_template("index.html")
-
-    ajhfjgf
