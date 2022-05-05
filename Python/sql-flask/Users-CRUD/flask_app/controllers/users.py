@@ -22,5 +22,25 @@ def submitNew():
     return redirect('/')
     
 @app.route('/users/create')
-def addNew():
+def create():
     return render_template('create.html')
+
+@app.route("/users/<int:id>/")
+def view(id):
+    data = {
+        "id" : id
+    }
+    return render_template('view.html', user = User.getOne(data))
+
+@app.route('/users/<int:user_id>/edit')
+def edit():
+    return render_template('edit.html')
+
+@app.route('/users/delete')
+def delete():
+    User.delete(data)
+    return redirect('/')
+
+@app.route('/home')
+def home():
+    return redirect('/')

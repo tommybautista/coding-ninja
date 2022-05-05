@@ -10,13 +10,13 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <header class="mt-4">
             <h1>Add a New User</h1>
             <nav>
                 {% block menu %} {% include 'menu.html' %} {% endblock menu %}
             </nav>
         </header>
-        <main>
+        <main class="mt-4"
             <form action='/users/submit/' method="POST">
                 <p><label for="first_name">First Name:</label></p>
                 <p><input type="text" name="first_name"></p>

@@ -21,7 +21,7 @@ class User:
 
     @classmethod
     def getOne(cls, data):
-        query = 'SELECT * FROM user WHERE id = %()s;'
+        query = 'SELECT * FROM user WHERE id = %(id)s;'
         results =  connectToMySQL(cls.db).query_db(query, data)
         if len(results) < 1:
             return False
