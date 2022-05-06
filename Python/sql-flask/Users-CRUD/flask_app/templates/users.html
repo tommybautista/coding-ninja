@@ -20,7 +20,6 @@
             <table class="text-center">
                 <thead>
                     <tr class="bg-secondary">
-                        <th>ID</th>
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Created At</th>
@@ -30,11 +29,14 @@
                 <tbody>
                     {%  for user in users %}
                         <tr>
-                            <td>{{user.id}}</td>
                             <td>{{user.first_name}} {{user.last_name}}</td>
                             <td>{{user.email}}</td>
                             <td>{{user.created_at.strftime("%b %d %Y")}}</td>
-                            <td><a href="/users/{{user.id}}/">View</a> | <a href="/users/{{user.id}}/edit">Edit</a> | <a href="/users/{{user.id}}/delete">Delete</a></td>
+                            <td>
+                                <a href="/users/{{user.id}}/">View</a> | 
+                                <a href="/users/{{user.id}}/edit">Edit</a> | 
+                                <a href="/user/{{ user.id }}/destroy">Delete</a>
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

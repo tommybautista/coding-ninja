@@ -38,8 +38,8 @@ class User:
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
-    def delete(cls, data):
-        query = 'DELETE FROM user WHERE id = %(id)s;'
+    def destroy(cls,data):
+        query  = "DELETE FROM user WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod

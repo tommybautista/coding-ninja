@@ -55,3 +55,7 @@ th {
     background-color: grey;
     color: white;
 }
+
+.viewBox {
+    border: 2px solid black;
+}
