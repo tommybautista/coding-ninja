@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
+
 class Ninja:
     db = 'dojos_and_ninjas'
     def __init__(self, data):
@@ -9,7 +10,6 @@ class Ninja:
         self.age = data['age']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.dojo_id = data['dojo_id']
 
     @classmethod
     def getAll(cls):
@@ -30,7 +30,7 @@ class Ninja:
 
     @classmethod
     def save(cls, data):
-        query = 'INSERT INTO ninjas (first_name, last_name, age) VALUES (%(first_name)s, %(last_name)s, %(age)s);'
+        query = 'INSERT INTO ninjas (first_name, last_name, age, dojo_id) VALUES (%(first_name)s, %(last_name)s, %(age)s, %(dojo_id)s);'
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
@@ -43,9 +43,5 @@ class Ninja:
         query  = "DELETE FROM ninjas WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query, data)
 
-    @classmethod
-    def getCohort(cls, data):
-        # Here is where join statements will go to show all the cohorts for one subject
-        pass
 
 

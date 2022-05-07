@@ -17,11 +17,11 @@
             <form action="/ninjas/create" method="POST">
                 <div>
                     <label for="dojo">Dojo:</label>
-                        <select name="dojo_id">
-                            {% for dojo in dojos %}
-                                <option value="{{ dojo_id }}>{{ dojos.name }}"></option>
-                            {% endfor %}  
-                        </select>
+                    <select name="dojo_id">
+                        {% for dojo in dojos %}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option>
+                        {% endfor %}
+                    </select>
                 </div>
                 <div>
                     <input type="hidden" name="dojo_id" value="{{ dojo_id }}">
@@ -36,7 +36,7 @@
                 </div>
                 <div>
                     <label for="age">Age:</label>
-                    <input type="text" name="age">                      
+                    <input type="number" name="age">                      
                 </div>
                 <div>
                     <input type="submit" value="Create">
@@ -48,11 +48,7 @@
         </div>
 
         <form action="/create/burger" method="post">
-                <select name="dojo_id">
-                {% for restaurant in all_restaurants %}
-                <option value={{dojos.id}}>{{dojo.name}}</option>
-                {% endfor %}
-                </select>
+            
         </form>
 
             

@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models import ninja
+from flask_app.models.ninja import Ninja
 
 class Dojo:
     db = 'dojos_and_ninjas'
@@ -14,10 +14,12 @@ class Dojo:
     def getAll(cls):
         query = 'SELECT * FROM dojos;'
         results = connectToMySQL(cls.db).query_db(query)
-        users = []
+        
+        dojos = []
         for row in results:
-            users.append(cls(row))
-        return users
+            dojos.append(cls(row))
+        print(dojos)
+        return dojos
 
     @classmethod
     def getOne(cls, data):
@@ -43,18 +45,20 @@ class Dojo:
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
-    def getDojosWithNinjas(cls, data):
-        query  = "SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = %(id)s;"
-        results = connectToMySQL(cls.db).query_db(query, data)
-        dojos = cls(results[0])
-        for row_from_db in results:
-            ninja_data = {
-                "id" : row_from_db["ninjas.id"],
-                "first_name" : row_from_db["first_name"],
-                "last_name" : row_from_db["last_name"],
-                "age" : row_from_db["age"],
-                "created_at" : row_from_db["ninjas.created_at"],
-                "updated_at" : row_from_db["ninjas.updated_at"]
+    def get_one_with_ninjas(cls, data ):
+        query = "SELECT * FROM dojos LEFT JOIN ninjas ON ninjas.dojo_id = dojos.id WHERE dojos.id = %(id)s;"
+        results = connectToMySQL(cls.db).query_db(query,data)
+        
+        dojo = cls(results[0])
+        print(dojo)
+        for row in results:
+            data = {
+                'id': row['ninjas.id'],
+                'first_name': row['first_name'],
+                'last_name': row['last_name'],
+                'age': row['age'],
+                'created_at': row['ninjas.created_at'],
+                'updated_at': row['ninjas.updated_at']
             }
-            dojos.ninjas.append( ninja.Ninja ( ninja_data ) )
-        return dojos
+            dojo.ninjas.append( Ninja(data) )
+        return dojo
