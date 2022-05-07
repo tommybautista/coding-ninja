@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 1170px;
+    margin: 0px auto;
+}
+
+h2 {
+    margin-bottom: 30px;
+}
+.right-row2 {
+    border: 1px solid black;
+    width: 350px;
+    height: 200px;
+}
+
+.left, .right {
+    margin: 50px;
+}
+
+/* li {
+    list-style-type:none
+} */
+
+.right-row3 {
+    margin-top: 20px;
+}
+
+td {
+    width: 300px;
+}
