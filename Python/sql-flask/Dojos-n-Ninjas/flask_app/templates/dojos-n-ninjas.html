@@ -11,32 +11,31 @@
 <body>
     <div class="container">
         <div>
-            <h1>Dojo: {{ dojo.name }}</h1>
+            <h1 class="display-3">Students in  {{ dojo.name }} Dojo</h1>
         </div>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Age</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for ninja in dojo.ninjas %}
+        <table class="table table-striped">
+            <thead class="bg-dark text-light">
                 <tr>
-                    <td>{{ ninja.first_name }}</td>
-                    <td>{{ ninja.last_name }}</td>
-                    <td>{{ ninja.age }}</td>
-                </tr>
-                {% endfor %} 
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <a href="/dojos">Back Home</a>
-        </div>
-
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Age</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ninja in dojo.ninjas %}
+            <tr>
+                <td>{{ ninja.first_name }}</td>
+                <td>{{ ninja.last_name }}</td>
+                <td>{{ ninja.age }}</td>
+                <td style="width: 135px;"><a href="/ninjas/{{ninja.id}}/update" style="color: black">Update</a> | <a href="/ninjas/{{ninja.id}}/delete" style="color: black">Delete</a></td>
+            </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+    </div>
+    <div style="margin-left: 55px;">
+        <a href="/dojos" style="color: black;">Go Home</a>
     </div>
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>

@@ -11,38 +11,30 @@
 <body>
     <div class="container bg-secondary mt-5">
         <div>
-            <h1 class="display-5">New Ninja</h1>
+            <h1 class="display-5">Update Ninja</h1>
         </div>
         <div>
-            <form action="/ninjas/create" method="POST">
+            <form action="/ninjas/update" method="POST">
                 <div class="form-group">
-                    <label for="dojo_id">Dojo</label>
-                    <select class="form-control" name="dojo_id">
-                        {% for dojo in dojos %}
-                        <option value="{{dojo.id}}">{{dojo.name}}</option>
-                        {% endfor %}
-                    </select>
+                    <input type="hidden" name="id" value={{ninja.id}}>
                 </div>
                 <div class="form-group">
                     <label for="first_name">First Name</label>
-                    <input type="text" class="form-control" name="first_name" placeholder="">
+                    <input type="text" class="form-control" name="first_name" Value="{{ninja.first_name}}">
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" placeholder="">
+                    <input type="text" class="form-control" name="last_name" Value="{{ninja.last_name}}">
                 </div>
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <input type="number" class="form-control" name="age" placeholder="">
+                    <input type="number" class="form-control" name="age" Value="{{ninja.age}}">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mt-2 mb-2">Create</button>
+                    <button type="submit" class="btn btn-primary mt-2 mb-2">Update</button>
                 </div>
             </form>
         </div>
-    </div>
-    <div style="margin-left: 55px;"">
-        <a href="/dojos" style="color: black;">Go Home</a>
     </div>
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>

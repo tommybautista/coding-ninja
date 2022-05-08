@@ -10,3 +10,23 @@ def ninjas():
 def createNinja():
     ninja.Ninja.save(request.form)
     return redirect('/dojos')
+
+@app.route('/ninjas/<int:id>/delete')
+def deleteNinja(id):
+    data = {
+        "id" : id
+    }
+    ninja.Ninja.destroy(data)
+    return redirect('/dojos')
+
+@app.route('/ninjas/<int:id>/update')
+def updateNinja(id):
+    data = {
+        "id" : id
+    }
+    return render_template('edit.html', ninja = ninja.Ninja.getOne(data))
+
+@app.route('/ninjas/update', methods=["POST"])
+def updateSubmit():
+    ninja.Ninja.update(request.form)
+    return redirect('/dojos')
