@@ -11,10 +11,10 @@
 <body>
     <div class="container bg-secondary mt-5">
         <div>
-            <h1 class="display-5">Update Ninja</h1>
+            <h1 class="display-5">Update Ninja in {{dojo.name}}</h1>
         </div>
         <div>
-            <form action="/ninjas/update" method="POST">
+            <form action="/ninjas/{{ dojo.id }}/update" method="POST">
                 <div class="form-group">
                     <input type="hidden" name="id" value={{ninja.id}}>
                 </div>

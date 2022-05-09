@@ -11,22 +11,28 @@ def createNinja():
     ninja.Ninja.save(request.form)
     return redirect('/dojos')
 
-@app.route('/ninjas/<int:id>/delete')
-def deleteNinja(id):
+@app.route('/ninjas/<int:dojoID>/<int:id>/delete')
+def deleteNinja(dojoID,id):
     data = {
         "id" : id
     }
-    ninja.Ninja.destroy(data)
-    return redirect('/dojos')
+    x = dojoID
+    ninja.Ninja.destroy(data)  
+    return redirect(f'/dojos/{x}/view')
 
-@app.route('/ninjas/<int:id>/update')
-def updateNinja(id):
+
+@app.route('/ninjas/<int:dojoID>/<int:id>/update')
+def updateNinja(dojoID, id):
     data = {
         "id" : id
     }
-    return render_template('edit.html', ninja = ninja.Ninja.getOne(data))
+    dojo_data = {
+        "id" : dojoID
+    }
+    return render_template('edit.html', ninja = ninja.Ninja.getOne(data), dojo = dojo.Dojo.getOne(dojo_data))
 
-@app.route('/ninjas/update', methods=["POST"])
-def updateSubmit():
+@app.route('/ninjas/<int:id>/update', methods=["POST"])
+def updateSubmit(id):
     ninja.Ninja.update(request.form)
-    return redirect('/dojos')
+    x = id
+    return redirect(f'/dojos/{x}/view')
