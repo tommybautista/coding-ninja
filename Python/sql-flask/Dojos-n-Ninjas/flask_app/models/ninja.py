@@ -1,4 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
 
 
 class Ninja:
@@ -43,5 +44,18 @@ class Ninja:
         query  = "DELETE FROM ninjas WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query, data)
 
+    @staticmethod
+    def validate_ninja(ninja):
+        is_valid = True # we assume this is true
+        if len(ninja['first_name']) < 3:
+            flash("First Name must be at least 3 characters.")
+            is_valid = False
+        if len(ninja['last_name']) < 3:
+            flash("Last Name must be at least 3 characters.")
+            is_valid = False
+        if int(ninja['age']) < 18:
+            flash("Ninja must be 18 or older.")
+            is_valid = False
+        return is_valid
 
 

@@ -8,6 +8,8 @@ def ninjas():
 
 @app.route('/ninjas/create', methods=["POST"])
 def createNinja():
+    if not ninja.Ninja.validate_ninja(request.form):
+        return redirect('/ninjas')
     ninja.Ninja.save(request.form)
     return redirect('/dojos')
 
