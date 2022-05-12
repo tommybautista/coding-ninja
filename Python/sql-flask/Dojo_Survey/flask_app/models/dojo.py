@@ -1,5 +1,4 @@
-from select import select
-from flask_app.config import mysqlconnection
+from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
 
 class Dojo:
@@ -16,7 +15,7 @@ class Dojo:
     @classmethod
     def save(cls, data):
         query = 'INSERT INTO dojos (name, location, language, comment) VALUES (%(name)s, %(location)s, %(language)s, %(comment)s);'
-        return mysqlconnection(cls.db).query_db(query, data)
+        return connectToMySQL(cls.db).query_db(query, data)
 
     @staticmethod
     def validate_ninja(ninja):

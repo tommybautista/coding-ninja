@@ -18,6 +18,6 @@ def createNinja():
     dojo.Dojo.save(request.form)
     return redirect('/dojos/results')
 
-@app.results('dojos/results')
+@app.route('/dojos/results')
 def results():
     return render_template("results.html")
