@@ -12,21 +12,20 @@ class Dojo:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
-    @classmethod
-    def getOne(cls, data):
-        query = 'SELECT * FROM dojos WHERE id = %(id)s;'
-        results =  connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
-            return False
-        return cls(results[0])
         
     @classmethod
     def save(cls, data):
         query = 'INSERT INTO dojos (name, location, language, comment) VALUES (%(name)s, %(location)s, %(language)s, %(comment)s);'
         return connectToMySQL(cls.db).query_db(query, data)
 
+    @classmethod
+    def get_last_survey(cls):
+        query = "SELECT * FROM dojos ORDER BY dojos.id DESC LIMIT 1;"
+        results = connectToMySQL(cls.db).query_db(query)
+        return Dojo(results[0])
+
     @staticmethod
-    def validate_ninja(ninja):
+    def valid(ninja):
         is_valid = True # we assume this is true
         if len(ninja['name']) < 3:
             flash("Name must be at least 3 characters.")
@@ -34,7 +33,7 @@ class Dojo:
         if ninja['location'] == 'Select a Location':
             flash("Must select a Location")
             is_valid = False
-        if (ninja['language']) == 'Select a Language':
+        if ninja['language'] == 'Select a Language':
             flash("Must select a Language.")
             is_valid = False
         if len(ninja['comment']) < 1:

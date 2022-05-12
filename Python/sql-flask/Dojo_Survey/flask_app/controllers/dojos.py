@@ -13,11 +13,11 @@ def showDojos():
 
 @app.route('/dojos/submit', methods=["POST"])
 def createNinja():
-    if not dojo.Dojo.validate_ninja(request.form):
+    if not dojo.Dojo.valid(request.form):
         return redirect('/')
     dojo.Dojo.save(request.form)
-    return redirect('/dojos/results', dojos = dojo.Dojo.getOne(id))
+    return redirect('/dojos/results')
 
 @app.route('/dojos/results')
 def results():
-    return render_template("results.html")
+    return render_template("results.html", dojos = dojo.Dojo.get_last_survey())

@@ -9,14 +9,14 @@
 </head>
 <body>
 	<div class="container" style="width:500px;">
-		<div class="bg-secondary mt-5" style="padding: 20px; border-radius: 5px;">
+		<div class="bg-secondary mt-5" style="padding: 20px; border-radius: 5px; width: 600px; margin: 0 auto;">
 		<div>
 			<h2> Submitted Info </h2>
 		</div>
 		<div style="background-color: white;">
 			<table class="table">
 				<tr>
-					<td>Name:</td>
+					<td class="col-5">Name:</td>
 					<td>{{ dojos.name }}</td>
 				</tr>
 				<tr>
@@ -29,12 +29,16 @@
 				</tr>
 				<tr>
 					<td>Comment:</td>
-					<td>{{ dojos.message }}</td>
+					<td>{{ dojos.comment }}</td>
 				</tr>
 			</table>
 
 		</div>
+		<div style="padding-bottom: 5px;" class="text-center"> 
+            <a href="/dojos" style="color: black;">Go Home</a>
+        </div>
 		</div>
+
 
 
 	</div>
