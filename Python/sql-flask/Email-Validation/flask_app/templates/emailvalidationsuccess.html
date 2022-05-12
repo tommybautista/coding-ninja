@@ -11,16 +11,16 @@
 
 	<div class="container mt-5" style="width:500px;">
 		<div class="mt-5" style="padding: 20px; border-radius: 5px;">
-            		{% with messages = get_flashed_messages() %}   
-    				{% if messages %}                         
-        				{% for message in messages %}    
+			{% with messages = get_flashed_messages() %}   
+				{% if messages %}                         
+					{% for message in messages %}    
 						<div class="text-center" style="border: 2px solid black; background-color: green; color: white;  font-weight: bolder;">       
-            						<p>{{message}}</p>  
+							<p>{{message}}</p>  
 						</div>                 
-        				{% endfor %}
-    				{% endif %}
+					{% endfor %}
+				{% endif %}
 			{% endwith %}
-   			<div>
+			<div>
 				<h3> Email Addresses Entered: </h3>
 				<p>{{ email }} {{ created_at }}</p>
 				<p>{{ email }} {{ created_at }}</p>
