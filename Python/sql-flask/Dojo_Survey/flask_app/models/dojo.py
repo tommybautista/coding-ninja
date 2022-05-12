@@ -13,6 +13,14 @@ class Dojo:
         self.updated_at = data['updated_at']
 
     @classmethod
+    def getOne(cls, data):
+        query = 'SELECT * FROM dojos WHERE id = %(id)s;'
+        results =  connectToMySQL(cls.db).query_db(query, data)
+        if len(results) < 1:
+            return False
+        return cls(results[0])
+        
+    @classmethod
     def save(cls, data):
         query = 'INSERT INTO dojos (name, location, language, comment) VALUES (%(name)s, %(location)s, %(language)s, %(comment)s);'
         return connectToMySQL(cls.db).query_db(query, data)

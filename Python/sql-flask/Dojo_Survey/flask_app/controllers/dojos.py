@@ -16,7 +16,7 @@ def createNinja():
     if not dojo.Dojo.validate_ninja(request.form):
         return redirect('/')
     dojo.Dojo.save(request.form)
-    return redirect('/dojos/results')
+    return redirect('/dojos/results', dojos = dojo.Dojo.getOne(id))
 
 @app.route('/dojos/results')
 def results():
