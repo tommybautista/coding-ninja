@@ -19,3 +19,11 @@ def registration():
 @app.route('/email/validated')
 def validated():
     return render_template("emailvalidationsuccess.html", emails=email.Email.getAll())
+
+@app.route('/email/<int:id>/delete')
+def delete(id):
+    data = {
+        "id" : id
+    }
+    email.Email.destroy(data)
+    return redirect('/email/validated')

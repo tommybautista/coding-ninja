@@ -35,10 +35,16 @@ class Email:
         user = cls(results[0])
         return user
 
+    @classmethod
+    def destroy(cls,data):
+        query  = "DELETE FROM email WHERE id = %(id)s;"
+        return connectToMySQL(cls.db).query_db(query, data)    
+
     @staticmethod
     def validate_user( user ):
         is_valid = True
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!")
             is_valid = False
+        flash("Login Successful")
         return is_valid

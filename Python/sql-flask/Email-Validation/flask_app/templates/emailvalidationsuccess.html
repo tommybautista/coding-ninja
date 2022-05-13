@@ -20,11 +20,25 @@
 					{% endfor %}
 				{% endif %}
 			{% endwith %}
-			<div>
+			<div class="mt-4">
 				<h3> Email Addresses Entered: </h3>
-				{% for email in emails %}
-					<p>{{ email.email }} {{ email.created_at }}</p>
-				{% endfor %}
+				<table>
+					<tr>
+						<th>Email</th>
+						<th>Created At</th>
+						<th></th>
+					</tr>
+					{% for email in emails %}
+					<tr>
+						<td class="col-6">{{ email.email }}</td>
+						<td class="col-6">{{ email.created_at }}</td>
+						<td><a href="/email/{{email.id}}/delete">Delete</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			<div class="mt-3">
+				<a href="/">Home</a>
 			</div>
 		</div>
 	</div>
