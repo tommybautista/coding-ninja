@@ -20,13 +20,13 @@
 					{% endfor %}
 				{% endif %}
 			{% endwith %}
-			<form action="" methods=['']>
+			<form action="/email/register" method='post'>
 				<div class="mb-3">
 					<label for="email" class="form-label">E-mail:</label>
-					<input type="email" class="form-control" name="name" placeholder="valid e-mail">
+					<input type="email" class="form-control" name="email" placeholder="valid e-mail">
 				</div>
 				<div>
-					<button type="button" class="btn btn-primary btn-sm">Submit</button>
+					<button type="submit" class="btn btn-primary btn-sm">Submit</button>
 				</div>
 			</form>
 		</div>
