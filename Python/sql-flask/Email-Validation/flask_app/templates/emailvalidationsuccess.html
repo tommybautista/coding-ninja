@@ -22,8 +22,9 @@
 			{% endwith %}
 			<div>
 				<h3> Email Addresses Entered: </h3>
-
-				<p>{{ email.email }} {{ email.created_at }}</p>
+				{% for email in emails %}
+					<p>{{ email.email }} {{ email.created_at }}</p>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

@@ -13,5 +13,9 @@ def registration():
     data = {
         "email" : request.form['email']
     }
-    user = email.Email.register_email(data)
-    return render_template("emailvalidationsuccess.html")
+    email.Email.register_email(data)
+    return redirect ('/email/validated')
+
+@app.route('/email/validated')
+def validated():
+    return render_template("emailvalidationsuccess.html", emails=email.Email.getAll())

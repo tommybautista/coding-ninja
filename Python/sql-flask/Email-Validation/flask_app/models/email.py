@@ -13,6 +13,15 @@ class Email:
         self.updated_at = data['updated_at']
 
     @classmethod
+    def getAll(cls):
+        query = 'SELECT * FROM email;'
+        results = connectToMySQL(cls.db).query_db(query)
+        emails = []
+        for row in results:
+            emails.append(cls(row))
+        return emails
+
+    @classmethod
     def register_email(cls, data):
         query = "INSERT INTO email (email) VALUES (%(email)s);" 
         return connectToMySQL(cls.db).query_db(query, data)
