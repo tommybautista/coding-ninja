@@ -10,4 +10,8 @@ def index():
 def registration():
     if not email.Email.validate_user(request.form):
         return redirect('/')
+    data = {
+        "email" : request.form['email']
+    }
+    user = email.Email.register_email(data)
     return render_template("emailvalidationsuccess.html")
