@@ -8,16 +8,6 @@ def index():
 
 @app.route('/email/register', methods=['POST'])
 def registration():
-    register_data = {
-        "email" : request.form['email'],
-    }
-    user_id = email.Email.register_email(register_data)
-    return redirect("emailvalidationsuccess.html")
-
-@app.route('/register', methods=['POST'])
-def register():
-    if not User.validate_user(request.form):
-        # we redirect to the template with the form.
+    if not email.Email.validate_user(request.form):
         return redirect('/')
-    # ... do other things
-    return redirect('/dashboard')
+    return render_template("emailvalidationsuccess.html")
