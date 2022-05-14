@@ -46,5 +46,4 @@ class Email:
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!")
             is_valid = False
-        flash("Login Successful")
         return is_valid
