@@ -52,9 +52,6 @@ def dashboard():
     users = User.get_by_id(user_data)
     return render_template('dashboard.html', user=user, users=users)
 
-
-
-
 @app.route('/recipes/edit')
 def edit():
     return render_template("edit.html")

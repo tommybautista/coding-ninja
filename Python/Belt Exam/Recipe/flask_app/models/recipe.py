@@ -15,7 +15,6 @@ class Recipe:
         self.under_30 = data['under_30']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.user_id = data['user_id']
         self.user = []
 
     @classmethod

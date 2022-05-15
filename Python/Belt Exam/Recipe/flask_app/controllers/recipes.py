@@ -1,34 +1,28 @@
+from crypt import methods
 from flask_app import app
 from flask import Flask, render_template, redirect, session, request
 from flask_app.models.recipe import Recipe
 
-@app.route('/recipes/create', methods=["POST"])
-def createNinja():
-    data = {
-        "name" : request.form["name"],
-        "description" : request.form['description'],
-        "instruction" : request.form['instruction'],
-        "under_30" : request.form['under_30']
-    }
-    Recipe.save(data)
-    return redirect('/dashboard')
 
 @app.route('/recipes/view')
 def view():
     return render_template("viewrecipe.html")
 
 @app.route('/recipes/<int:id>/new')
-def new(id):
+def new():
+    return render_template("addrecipe.html")
+
+@app.route("/recipes/create", methods=['POST'])
+def create(id):
     data = {
-        "id" : id,
+        "id" : request.form['id'],
         "name" : request.form['name'],
         "description" : request.form['description'],
         "instruction" : request.form['instruction'],
-        "under_30" : request.form['under_30'],
-        "user_id" : id
+        "under_30" : request.form['under_30']
     }
     Recipe.save(data)
-    return render_template("addrecipe.html")
+    return redirect('/dashboard')
 
 
 @app.route('/ninjas/<int:dojoID>/<int:id>/delete')
