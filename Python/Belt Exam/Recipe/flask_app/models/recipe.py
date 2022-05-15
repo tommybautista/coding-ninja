@@ -6,7 +6,7 @@ import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class Recipe:
-    db = 'recipe'
+    db = "recipe"
     def __init__(self, data):
         self.id = data['id']
         self.name = data['name']
@@ -16,7 +16,7 @@ class Recipe:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
-        self.recipes = []
+        self.user = []
 
     @classmethod
     def getAll(cls):
@@ -38,7 +38,7 @@ class Recipe:
 
     @classmethod
     def save(cls, data):
-        query = 'INSERT INTO recipes (first_name, last_name, email, password, recipe_id) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s, %(recipe_id)s);'
+        query = 'INSERT INTO recipes (name, description, instruction, under_30, user_id) VALUES (%(name)s, %(description)s, %(instruction)s, %(under_30)s, %(user_id)s);'
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
@@ -50,3 +50,4 @@ class Recipe:
     def destroy(cls,data):
         query  = "DELETE FROM recipes WHERE id = %(id)s;"
         return connectToMySQL(cls.db).query_db(query, data)
+

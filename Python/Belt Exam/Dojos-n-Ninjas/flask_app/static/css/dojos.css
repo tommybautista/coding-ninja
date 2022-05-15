@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 1170px;
+    margin: 0px auto;
+}
+
+.right {
+    background-color: gray;
+    box-shadow: 3px 3px 3px 3px;
+    border-radius: 5px;
+}
+
+.left-row1, .left-row2 {
+    padding-left: 10px;
+}
+.right-row2 {
+    width: 450px;
+    height: auto;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+.right {
+    margin: 50px;
+}
+
+.td1 {
+    width: 500px;
+}
+.td2 {
+    width: auto;
+}
+
+#name {
+    width: 430px;
+    border-radius: 5px;
+}
+

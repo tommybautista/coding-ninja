@@ -11,50 +11,48 @@
 <body>
 
 	<div class="container">
-		<div class="row1">
-			<div><h1> Welcome {{ user.first_name }} {{ user.last_name}} ! </h1></div>
+		<div class="row1 mt-5">
+			<div><h1 class="display-2">Vehicle Info</h1></div>
 			<div>
-				<a href="/recipes/{{users.id}}/new">Create</a>
+				<a href="/dashboard">Dashboard</a>
 				<a href="/logout">Logout</a>
 			</div>
 		</div>
 
-		<div class="row2">
-			<div><h3> These are the recipes </h3></div>
-		</div>
-
-		<div class="row3">
+		<div class="row3 mt-3">
 			<div>
 				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th class="col-4">Name</th>
-							<th class="col-3">Under 30 Minutes?</th>
-							<th>Actions</th>
-						</tr>
-					</thead>
 					<tbody>
-						{% for recipe in user.recipes %}
 						<tr>
-							<td>{{ users.recipes.name }}</td>
-							<td>{{ users.recipes.under_30 }}</td>
-							<td>
-								<a href="recipes/{{user_id}}/view">View Instructions</a>
-								<a href="/recipes/{{user_id}}edit">Edit</a>
-								<a href="/recipes/{{user_id}}destroy">Delete</a>
-							</td>
+							<th>Price</td>
+							<td>${{cars.price}}</td>
 						</tr>
-						{% endfor %}
+						<tr>
+							<th>Model</td>
+							<td>{{cars.model}}</td>
+						</tr>
+						<tr>
+							<th>Make</td>
+							<td>{{cars.make}}</td>
+						</tr>
+						<tr>
+							<th>Year</td>
+							<td>{{cars.year}}</td>
+						</tr>
+						<tr>
+							<th>Despription</td>
+							<td>{{cars.description}}</td>
+						</tr>	
+						<tr>
+							<th>Seller</td>
+							<td>{{cars.seller}}</td>
+						</tr>								
 					</tbody>
 				</table>
+				<a href="/cars/{{cars.id}}/purchase">Purchase</a>
 			</div>
 		</div>
-			
-
 	</div>
 
 </body>
 </html>
-
-
-

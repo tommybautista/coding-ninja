@@ -11,37 +11,41 @@
 <body>
 
 	<div class="container">
-		<div class="row1">
-			<div><h1> Welcome {{ user.first_name }} {{ user.last_name}} ! </h1></div>
+		<div class="row1 mt-5">
+			<div><h1 class="display-5"> Welcome to Car Dealz, {{ salesperson.first_name }} {{ salesperson.last_name}} !!! </h1></div>
 			<div>
-				<a href="/recipes/{{users.id}}/new">Create</a>
+				<a href="/cars/{{salesperson.id}}/new">Add a Car</a>
 				<a href="/logout">Logout</a>
 			</div>
 		</div>
 
-		<div class="row2">
-			<div><h3> These are the recipes </h3></div>
+		<div class="row2 mt-5">
+			<div><h3 class="display-6"> Cars for Sale </h3></div>
 		</div>
 
-		<div class="row3">
+		<div class="row3 mt-3">
 			<div>
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th class="col-4">Name</th>
-							<th class="col-3">Under 30 Minutes?</th>
+							<th class="col-2">Year</th>
+							<th class="col-4">Model</th>
+							<th class="col-4">Seller</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						{% for recipe in user.recipes %}
+						{% for car in cars %}
 						<tr>
-							<td>{{ users.recipes.name }}</td>
-							<td>{{ users.recipes.under_30 }}</td>
+							<td>{{ car.year }}</td>
+							<td>{{ car.model }}</td>
+							<td>{{ salesperson.first_name }} {{ salesperson.last_name  }}</td>
 							<td>
-								<a href="recipes/{{user_id}}/view">View Instructions</a>
-								<a href="/recipes/{{user_id}}edit">Edit</a>
-								<a href="/recipes/{{user_id}}destroy">Delete</a>
+								<a href="cars/{{car.id}}/view">View</a>
+								{% if cars.salesperson_id == session[salespersons_id] %}
+								<a href="/cars/{{car.id}}/edit">Edit</a>
+								<a href="/cars/{{car.id}}/destroy">Delete</a>
+								{% endif %}
 							</td>
 						</tr>
 						{% endfor %}
