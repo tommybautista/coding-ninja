@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models.recipe import Recipe
 from flask import flash
-from flask_app.models import user, recipe
 import re
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
@@ -18,18 +18,38 @@ class User:
         self.recipes = []
 
     @classmethod
+    def getAll(cls):
+        query = 'SELECT * FROM users;'
+        results = connectToMySQL(cls.db).query_db(query)
+        users = []
+        for row in results:
+            users.append(cls(row))
+        print(users)
+        return users
+
+    @classmethod
+    def getOne(cls, data):
+        query = 'SELECT * FROM users WHERE id = %(id)s;'
+        results =  connectToMySQL(cls.db).query_db(query, data)
+        if len(results) < 1:
+            return False
+        return cls(results[0])
+
+    @classmethod
     def save(cls, data):
-        query = "INSERT INTO users(first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);" 
+        query = 'INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s);'
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
-    def get_user_by_id(cls, data):
-        query = "SELECT * FROM users WHERE id = %(id)s"
-        results = connectToMySQL(cls.db).query_db(query, data)
-        if len(results) < 1:
-            return False
-        user = cls(results[0])
-        return user
+    def update(cls, data):
+        query = 'UPDATE users SET first_name = %(first_name)s, last_name = %(last_name)s, email = %(email)s, password = %(password)s WHERE id = %(id)s;'
+        return connectToMySQL(cls.db).query_db(query, data)
+
+    @classmethod
+    def destroy(cls,data):
+        query  = "DELETE FROM users WHERE id = %(id)s;"
+        return connectToMySQL(cls.db).query_db(query, data)
+
 
     @classmethod
     def get_user_by_email(cls, data):
@@ -38,27 +58,6 @@ class User:
         if len(results) < 1:
             return False        
         user = cls(results[0])
-        return user
-
-    @classmethod
-    def get_by_id(cls,data):
-        query = "SELECT * FROM users LEFT JOIN recipes ON recipes.user_id = users.id WHERE users.id = %(id)s;"
-        results = connectToMySQL(cls.db).query_db(query,data)
-        
-        user = cls(results[0])
-        print(user)
-        for row in results:
-            data = {
-                'id': row['recipes.id'],
-                'name': row['name'],
-                'description': row['description'],
-                'instruction': row['instruction'],
-                'under_30': row['under_30'],
-                'created_at': row['recipes.created_at'],
-                'updated_at': row['recipes.updated_at'],
-                'user_id' : row['user_id']
-            }
-            user.recipes.append(recipe.Recipe(data))
         return user
 
     @staticmethod
